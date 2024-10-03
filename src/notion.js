@@ -33,7 +33,7 @@ const createPageArray = (holidays, databaseId) => {
 
     // 휴일이 아니면
     if (isHoliday === undefined) {
-      date.setHours(10, 30, 0, 0);
+      date.setUTCHours(10, 30, 0, 0);
       pageArray.push(
         new PageBuilder(databaseId)
           .setTitle('데일리 스크럼')
