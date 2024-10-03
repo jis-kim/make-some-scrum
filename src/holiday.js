@@ -37,6 +37,9 @@ export const getHoliday = async () => {
   const date = new Date();
   const key = process.env.HOLIDAY_API_KEY;
 
+  console.log('holiday key : ', process.env.HOLIDAY_API_KEY);
+  console.log('notion key : ', process.env.NOTION_SECRET);
+
   // UTC 시간에서 9시간 더해서 KST로 변환
   // 갑자기.. 난 15일에 할건데 굳이 이걸.............해야 하나? 하는 생가ㄱ이..
   //date.setHours(date.getUTCHours() + 9); // UTC 기준으로 9시간 더하기 (KST = UTC + 9)
