@@ -14,7 +14,7 @@ export class PageBuilder {
 
   setDate(date) {
     this.page.addProperty('Date', {
-      date: { start: date.toISOString() },
+      date: { start: date.toISOString(), time_zone: 'Asia/Seoul' },
     });
     return this;
   }

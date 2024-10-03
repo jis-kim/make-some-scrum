@@ -19,7 +19,6 @@ const createPageArray = (holidays, databaseId) => {
 
   for (let i = 0; i < 5; i++) {
     const date = new Date(startDay.getTime() + 24 * 60 * 60 * 1000 * i);
-    console.log(date);
     const dateDate = date.getDate();
     const dateMonth = date.getMonth();
     const dateYear = date.getFullYear();
@@ -34,6 +33,7 @@ const createPageArray = (holidays, databaseId) => {
     // 휴일이 아니면
     if (isHoliday === undefined) {
       date.setUTCHours(10, 30, 0, 0);
+      console.log(date);
       pageArray.push(
         new PageBuilder(databaseId)
           .setTitle('데일리 스크럼')
