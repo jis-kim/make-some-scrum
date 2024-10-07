@@ -15,7 +15,7 @@ const createPageArray = (holidays, databaseId) => {
     today.getTime() + daysUntilNextMonday * 24 * 60 * 60 * 1000
   );
 
-  console.log('startDay:: ', startDay);
+  console.log('startDay: ', startDay);
 
   for (let i = 0; i < 5; i++) {
     const date = new Date(startDay.getTime() + 24 * 60 * 60 * 1000 * i);
@@ -33,7 +33,6 @@ const createPageArray = (holidays, databaseId) => {
     // 휴일이 아니면
     if (isHoliday === undefined) {
       date.setUTCHours(10, 30, 0, 0);
-      console.log(date);
       pageArray.push(
         new PageBuilder(databaseId)
           .setTitle('데일리 스크럼')
@@ -58,6 +57,7 @@ export const createNotionPage = async (holidays) => {
 
   const promises = pageArray.map((page) => {
     notion.pages.create(page);
+    console.log('page created at: ', page.properties.Date.date.start);
   });
 
   await Promise.all(promises);

@@ -11,7 +11,6 @@ dotenv.config();
 
 // 공휴일 API 받아오기
 const holidays = await getHoliday();
-console.log(holidays);
 await createNotionPage(holidays);
 
 // holiday 제외하고 월화수목금 10:30에 스크럼 생성
